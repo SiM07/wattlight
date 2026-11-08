@@ -51,7 +51,7 @@
   },
   "dependencies": {
     "@stoprocent/noble": "^2.8.0",
-    "@webviewjs/webview": "^0.4.9",
+    "@webviewjs/webview": "^0.6.0",
     "dbus-next": "^0.10.2"
   },
   "devDependencies": {
