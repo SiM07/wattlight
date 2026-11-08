@@ -1,0 +1,65 @@
+{
+  "name": "wattlight",
+  "version": "1.0.0",
+  "description": "Your Philips Hue lights follow your power or heart rate training zone, live.",
+  "keywords": [
+    "indoor-cycling",
+    "philips-hue",
+    "hue",
+    "cycling",
+    "heart-rate",
+    "power-meter",
+    "smart-trainer",
+    "bluetooth",
+    "ble"
+  ],
+  "homepage": "https://github.com/SiM07/wattlight#readme",
+  "bugs": {
+    "url": "https://github.com/SiM07/wattlight/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SiM07/wattlight.git"
+  },
+  "license": "MIT",
+  "author": "Simon Rolland",
+  "type": "module",
+  "bin": {
+    "wattlight": "./dist/src/main.js"
+  },
+  "files": [
+    "dist/src",
+    "dist/ui",
+    "!dist/**/*.map",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node scripts/build.ts",
+    "start": "npm run build && node dist/src/main.js",
+    "demo": "npm run build && node dist/src/main.js --demo",
+    "sandbox": "npm run build && node dist/src/main.js --sandbox",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.ui.json --noEmit",
+    "lint": "eslint .",
+    "test": "node --test \"test/**/*.test.ts\"",
+    "check": "npm run typecheck && npm run lint && npm test",
+    "package": "npm run build && node scripts/package.ts",
+    "prepack": "npm run build"
+  },
+  "engines": {
+    "node": ">=22.18"
+  },
+  "dependencies": {
+    "@stoprocent/noble": "^2.8.0",
+    "@webviewjs/webview": "^0.4.9",
+    "dbus-next": "^0.10.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "@types/node": "^22.20.5",
+    "eslint": "^9.39.5",
+    "globals": "^17.13.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.72.0"
+  }
+}
